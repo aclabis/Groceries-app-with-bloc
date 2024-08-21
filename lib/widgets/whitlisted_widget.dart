@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:groceries_app/blocs/home/home_bloc.dart';
-import 'package:groceries_app/blocs/home/home_events.dart';
-import 'package:groceries_app/model/data_model.dart';
 
-class ProductWidget extends StatelessWidget {
-  final ProductDataModel productmodel;
-  final HomeBloc homeBloc;
-  const ProductWidget({
-    super.key,
-    required this.productmodel,
-    required this.homeBloc,
-  });
+class WhitlistedWidget extends StatelessWidget {
+  final String image;
+  final String name;
+  final String description;
+  final double price;
+  const WhitlistedWidget(
+      {super.key,
+      required this.image,
+      required this.name,
+      required this.description,
+      required this.price});
 
   @override
   Widget build(BuildContext context) {
@@ -31,27 +31,24 @@ class ProductWidget extends StatelessWidget {
             width: double.maxFinite,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(productmodel.imageUrl))),
+                    fit: BoxFit.cover, image: NetworkImage(image))),
           ),
           const SizedBox(height: 20),
-          Text(productmodel.name,
+          Text(name,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-          Text(productmodel.description),
+          Text(description),
           const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("\$" + productmodel.price.toString(),
+              Text("\$" + price.toString(),
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               Row(
                 children: [
                   IconButton(
                       onPressed: () {
-                        homeBloc.add(HomeProductwhitllistButtonClickedEvent(
-                            whitlistclicked: productmodel));
-                      },
-                      icon: Icon(Icons.favorite_border)),
+                        
+                      }, icon: Icon(Icons.favorite_border)),
                   IconButton(
                       onPressed: () {},
                       icon: Icon(Icons.shopping_bag_outlined)),

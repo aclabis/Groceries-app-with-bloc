@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries_app/blocs/home/home_bloc.dart';
 import 'package:groceries_app/blocs/home/home_events.dart';
 import 'package:groceries_app/blocs/home/home_states.dart';
+import 'package:groceries_app/view/whitlist/whistlist_screen.dart';
 import 'package:groceries_app/widgets/product_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -26,7 +27,10 @@ class HomeScreen extends StatelessWidget {
               ),
               actions: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => WhistlistScreen()));
+                  },
                   icon: const Icon(
                     Icons.favorite_outline,
                     color: Colors.white,
@@ -44,7 +48,7 @@ class HomeScreen extends StatelessWidget {
               itemCount: products.length,
               itemBuilder: (context, index) {
                 return ProductWidget(
-                  productDataModel: products[index],
+                  productmodel: products[index],
                   homeBloc: homeBloc,
                 );
               },

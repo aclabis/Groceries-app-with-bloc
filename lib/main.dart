@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries_app/blocs/home/home_bloc.dart';
+import 'package:groceries_app/blocs/whistlist/whistlist_bloc.dart';
 import 'package:groceries_app/view/home/home_screen.dart';
 
 void main() {
@@ -13,7 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider(create: (_) => HomeBloc())],
+      providers: [
+        BlocProvider(create: (_) => HomeBloc()),
+        BlocProvider(create: (_) => WhistlistBloc())
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(

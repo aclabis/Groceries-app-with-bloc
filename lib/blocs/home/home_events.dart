@@ -24,3 +24,4 @@ class HomeProductCartButtonClickedEvent extends HomeEvents {
   @override
   List<Object?> get props => [cartclicked];
 }
+
