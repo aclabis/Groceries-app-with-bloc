@@ -6,7 +6,7 @@ class GroceryData{
     'id': '1',
     'name': 'Bananas',
     'description': 'Fresh bananas from Ecuador',
-    'price': 0.49,
+    'price': 0.48,
     'imageUrl': 'https://cdn.shopify.com/s/files/1/0258/4307/3103/products/asset_2_800x.jpg?v=1571839043',
   },
   {
