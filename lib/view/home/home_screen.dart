@@ -44,6 +44,7 @@ class HomeScreen extends StatelessWidget {
                 )
               ],
             ),
+            
             body: ListView.builder(
               itemCount: products.length,
               itemBuilder: (context, index) {
