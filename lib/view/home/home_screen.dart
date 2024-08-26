@@ -14,7 +14,13 @@ class HomeScreen extends StatelessWidget {
     final homeBloc = context.read<HomeBloc>();
     homeBloc.add(HomeInitialEvent());
     return BlocConsumer<HomeBloc, HomeStates>(
-      listener: (context, state) {},
+      bloc: homeBloc,
+      listener: (context, state) {
+        if (state is HomeShowSnackBarState) {
+          ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text("Product is whistlisted")));
+        }
+      },
       builder: (context, state) {
         if (state is HomeLoadedState) {
           final products = state.products;
@@ -44,9 +50,8 @@ class HomeScreen extends StatelessWidget {
                 )
               ],
             ),
-             
             body: ListView.builder(
-              itemCount:products.length,
+              itemCount: products.length,
               itemBuilder: (context, index) {
                 return ProductWidget(
                   productmodel: products[index],
@@ -61,8 +66,6 @@ class HomeScreen extends StatelessWidget {
           return const Center(child: Text("Something went wrong!"));
         }
       },
-
     );
   }
 }
-

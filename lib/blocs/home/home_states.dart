@@ -7,6 +7,8 @@ class HomeStates extends Equatable {
 }
 class HomeInitialState extends HomeStates{}
 
+class HomeActionState extends HomeStates{}
+
 class HomeLoadingState extends HomeStates {}
 
 class HomeLoadedState extends HomeStates {
@@ -19,6 +21,9 @@ class HomeLoadedState extends HomeStates {
 
 class HomeErrorState extends HomeStates {}
 
+
 class whitlistItemAddedstate extends HomeStates {}
 
 class cartItemAdedstate extends HomeStates {}
+
+class HomeShowSnackBarState extends HomeActionState{}

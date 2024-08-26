@@ -25,3 +25,4 @@ class HomeProductCartButtonClickedEvent extends HomeEvents {
   List<Object?> get props => [cartclicked];
 }
 
+class HomeShowSnackBarEvent extends HomeEvents {}

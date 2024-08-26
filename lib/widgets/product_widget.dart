@@ -48,10 +48,13 @@ class ProductWidget extends StatelessWidget {
                 children: [
                   IconButton(
                       onPressed: () {
-                        homeBloc.add(HomeProductwhitllistButtonClickedEvent(
-                            whitlistclicked: productmodel));
+                        homeBloc.add(
+                          HomeProductwhitllistButtonClickedEvent(
+                              whitlistclicked: productmodel),
+                        );
+                        // homeBloc.add(HomeShowSnackBarEvent());
                       },
-                      icon: Icon(Icons.favorite_border)),
+                      icon:const Icon(Icons.favorite_border)),
                   IconButton(
                       onPressed: () {},
                       icon: Icon(Icons.shopping_bag_outlined)),

@@ -14,6 +14,7 @@ class HomeBloc extends Bloc<HomeEvents, HomeStates> {
         homeProductwhitllistButtonClickedEvent);
 
     on<HomeProductCartButtonClickedEvent>(homeProductCartButtonClickedEvent);
+    on<HomeShowSnackBarEvent>(homeShowSnackBarEvent);
   }
 
   FutureOr<void> homeInitialEvent(
@@ -41,5 +42,10 @@ class HomeBloc extends Bloc<HomeEvents, HomeStates> {
   FutureOr<void> homeProductCartButtonClickedEvent(
       HomeProductCartButtonClickedEvent event, Emitter<HomeStates> emit) {
     cartItem.add(event.cartclicked);
+  }
+
+  FutureOr<void> homeShowSnackBarEvent(
+      HomeShowSnackBarEvent event, Emitter<HomeStates> emit) {
+    emit(HomeShowSnackBarState());
   }
 }
