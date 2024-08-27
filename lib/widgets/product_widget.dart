@@ -37,7 +37,7 @@ class ProductWidget extends StatelessWidget {
           const SizedBox(height: 20),
           Text(productmodel.name,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-          Text(productmodel.description),
+           Text(productmodel.description),
           const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
